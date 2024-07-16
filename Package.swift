@@ -5,19 +5,31 @@ import PackageDescription
 
 let package = Package(
     name: "Utilities",
+    platforms: [
+        .iOS(.v16),
+        .macOS(.v13)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
+        .library(
+            name: "ColorUtilities",
+            targets: ["ColorUtilities"]
+        ),
         .library(
             name: "Utilities",
-            targets: ["Utilities"]),
+            targets: ["Utilities"]
+        ),
+        .library(
+            name: "ViewRenderer",
+            targets: ["ViewRenderer"]
+        )
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "Utilities"),
+        .target(name: "ColorUtilities"),
+        .target(name: "Utilities"),
+        .target(name: "ViewRenderer"),
         .testTarget(
-            name: "UtilitiesTests",
-            dependencies: ["Utilities"]),
+            name: "ColorUtilitiesTests",
+            dependencies: ["ColorUtilities"]
+        )
     ]
 )
