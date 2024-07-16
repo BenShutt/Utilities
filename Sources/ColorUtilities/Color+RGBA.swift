@@ -36,7 +36,7 @@ extension Color {
     }
 
     /// Map to a `PlatformColor` and extract the `RGBA` components
-    /// - Note: There doesn't seem to be a SwiftUI way of extracting the RGBA components (yet).
+    /// - Note: There doesn't yet seem to be a SwiftUI way of extracting the RGBA components.
     var rgba: RGBA {
         let color = PlatformColor(self)
 
