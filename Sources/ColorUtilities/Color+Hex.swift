@@ -10,7 +10,7 @@ import SwiftUI
 
 public extension Color {
 
-    /// RGBA hex of the form `"#RRGGBBAA"`
+    /// RGBA hex of the form `#RRGGBBAA`
     typealias RGBAHex = String
 
     /// Initialize with the given hex color string.

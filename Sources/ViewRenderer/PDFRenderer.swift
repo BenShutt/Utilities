@@ -44,7 +44,7 @@ public extension ImageRenderer {
         }
 
         if !isSuccess {
-            throw ImageRendererError.render(url)
+            throw ImageRendererError.renderPDF(url)
         }
     }
 }
@@ -52,7 +52,7 @@ public extension ImageRenderer {
 // MARK: - ImageRendererError
 
 public enum ImageRendererError: Error {
-    case render(URL)
+    case renderPDF(URL)
 }
 
 // MARK: - CGRect + Extensions

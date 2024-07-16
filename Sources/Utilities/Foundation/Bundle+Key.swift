@@ -21,17 +21,15 @@ public extension Bundle {
     }
 
     /// Object for `key` casting to `T`
-    ///
-    /// - Parameter key: `Bundle.Key`
-    func value<T>(forKey key: Bundle.Key) -> T? {
+    /// - Parameter key: `Key`
+    func value<Value>(forKey key: Bundle.Key) -> Value? {
         value(forKey: key.rawValue)
     }
 
-    /// Object for `key` casting to `T`
-    ///
-    /// - Parameter key: `Bundle.Key`
-    func value<T>(forKey key: String) -> T? {
-        object(forInfoDictionaryKey: key) as? T
+    /// Object for `key` casting to `Value`
+    /// - Parameter key: `Key`
+    func value<Value>(forKey key: String) -> Value? {
+        object(forInfoDictionaryKey: key) as? Value
     }
 
     // MARK: - Values

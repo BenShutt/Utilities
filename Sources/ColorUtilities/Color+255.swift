@@ -18,7 +18,7 @@ public extension Color {
 
     /// Shorthand for initializing with RGBA components in [0, 255]
     /// - Parameters:
-    ///   - colorSpace: Color space, defaults to `.sRGB`
+    ///   - colorSpace: Color space, defaults to sRGB
     ///   - red: Red component in [0, 255]
     ///   - green: Green component in [0, 255]
     ///   - blue: Blue component in [0, 255]
@@ -41,7 +41,7 @@ public extension Color {
 
     /// Shorthand for initializing with white and opacity components in [0, 255]
     /// - Parameters:
-    ///   - colorSpace: Color space, defaults to `.sRGB`
+    ///   - colorSpace: Color space, defaults to sRGB
     ///   - white: White component in [0, 255]
     ///   - opacity: Opacity component in [0, 255], defaults to 255
     init(

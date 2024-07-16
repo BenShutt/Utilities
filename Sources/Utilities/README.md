@@ -1,3 +1,3 @@
 # Utilities
 
-Foundation and SwiftUI utilities 
+A collection of common objects and functions that add to Foundation and SwiftUI. 

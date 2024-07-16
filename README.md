@@ -1,13 +1,11 @@
 # Utilities
 
-A simple swift package of entities and extensions commonly used in Swift development.
+A simple swift package collecting common functionality used in Swift development.
 
-## Structure
+## Libraries
 
-There are 3 targets, each of which create a corresponding library product
+There are 3 targets, each of which create a corresponding library product with its own README 
 
 - ColorUtilities
 - Utilities
 - ViewRenderer
-
-Please see the corresponding `README.md` for each.
