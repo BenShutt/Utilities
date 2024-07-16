@@ -1,6 +1,6 @@
 # ViewRenderer
 
-Small library that uses [ImageRenderer](https://developer.apple.com/documentation/swiftui/imagerenderer) to render PDF and PNG files from SwiftUI views. A common usage is generating an app icon 1024x1024 PNG image.
+Small library that uses [ImageRenderer](https://developer.apple.com/documentation/swiftui/imagerenderer) to render PDF and PNG files from SwiftUI views. A common usage is generating an (1024x1024) app icon PNG image.
 
 ## PNG
 
