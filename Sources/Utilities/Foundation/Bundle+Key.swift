@@ -20,14 +20,14 @@ public extension Bundle {
         case appName = "CFBundleName"
     }
 
-    /// Object for `key` casting to `T`
-    /// - Parameter key: `Key`
+    /// Object for `key` casting to `Value`
+    /// - Parameter key: `Key` in info dictionary
     func value<Value>(forKey key: Bundle.Key) -> Value? {
         value(forKey: key.rawValue)
     }
 
     /// Object for `key` casting to `Value`
-    /// - Parameter key: `Key`
+    /// - Parameter key: `String` key in info dictionary
     func value<Value>(forKey key: String) -> Value? {
         object(forInfoDictionaryKey: key) as? Value
     }
