@@ -1,5 +1,5 @@
 //
-//  ColorTests.swift
+//  ColorUtilitiesTests.swift
 //  ColorUtilitiesTests
 //
 //  Created by Ben Shutt on 16/07/2024.
@@ -10,40 +10,38 @@ import XCTest
 import SwiftUI
 @testable import ColorUtilities
 
-// MARK: - ColorTests
-
-final class ColorTests: XCTestCase {
+final class ColorUtilitiesTests: XCTestCase {
     func testHexString() {
         TestColor.allCases.forEach { testColor in
             XCTAssertEqual(
-                testColor.color.hex(opacity: false),
-                testColor.hex(opacity: "")
+                testColor.expectedColor.hex(),
+                testColor.expectedHex()
             )
         }
     }
 
-    func testHexStringOpacity() {
+    func testHexStringWithoutOpacity() {
         TestColor.allCases.forEach { testColor in
             XCTAssertEqual(
-                testColor.color.hex(),
-                testColor.hex()
+                testColor.expectedColor.hex(opacity: false),
+                testColor.expectedHex(opacity: "")
             )
         }
     }
 
     func testHexInit() throws {
         try TestColor.allCases.forEach { testColor in
-            let color = Color(hex: testColor.hex())
+            let color = Color(hex: testColor.expectedHex())
             guard let color else { throw TestError.optionalNil }
-            XCTAssertEqual(color, testColor.color)
+            XCTAssertEqual(color, testColor.expectedColor)
         }
     }
 
     func testHexInitWithOpacity() throws {
         try TestColor.allCases.forEach { testColor in
-            let color = Color(hex: testColor.hex(opacity: "80"))
+            let color = Color(hex: testColor.expectedHex(opacity: "80")) // 50%
             guard let color else { throw TestError.optionalNil }
-            XCTAssertEqual(color.hex(), testColor.color.opacity(0.5).hex())
+            XCTAssertEqual(color.hex(), testColor.expectedColor.opacity(0.5).hex())
         }
     }
 
@@ -53,9 +51,9 @@ final class ColorTests: XCTestCase {
                 red255: testColor == .red ? 255 : 0,
                 green: testColor == .green ? 255 : 0,
                 blue: testColor == .blue ? 255 : 0,
-                opacity: 51
+                opacity: 51 // 20%
             )
-            let color = testColor.color.opacity(0.2)
+            let color = testColor.expectedColor.opacity(0.2)
             XCTAssertEqual(color255.hex(), color.hex())
         }
     }
@@ -68,7 +66,7 @@ private enum TestColor: CaseIterable {
     case green
     case blue
 
-    var color: Color {
+    var expectedColor: Color {
         switch self {
         case .red: Color(red: 1, green: 0, blue: 0)
         case .green: Color(red: 0, green: 1, blue: 0)
@@ -76,7 +74,7 @@ private enum TestColor: CaseIterable {
         }
     }
 
-    func hex(opacity: String = "FF") -> String {
+    func expectedHex(opacity: String = "FF") -> String {
         switch self {
         case .red: "#FF0000\(opacity)"
         case .green: "#00FF00\(opacity)"
