@@ -1,6 +1,6 @@
 # Utilities
 
-A swift package of common functionality used in Swift development.
+A package of common functionality used in Swift development.
 
 ## Libraries
 
