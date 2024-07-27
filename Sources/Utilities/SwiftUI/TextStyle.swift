@@ -11,7 +11,7 @@ import SwiftUI
 private struct TextStyle: ViewModifier {
     var font: Font
     var truncationMode: Text.TruncationMode
-    var lintLimit: Int?
+    var lineLimit: Int?
     var textAlignment: TextAlignment
     var foregroundColor: Color
     var maxWidth: CGFloat?
@@ -28,7 +28,7 @@ private struct TextStyle: ViewModifier {
         content
             .font(font)
             .truncationMode(truncationMode)
-            .lineLimit(lintLimit)
+            .lineLimit(lineLimit)
             .multilineTextAlignment(textAlignment)
             .foregroundStyle(foregroundColor)
             .frame(maxWidth: maxWidth, alignment: alignment)
@@ -41,7 +41,7 @@ public extension View {
     func textStyle(
         font: Font,
         truncationMode: Text.TruncationMode = .tail,
-        lintLimit: Int? = nil,
+        lineLimit: Int? = nil,
         textAlignment: TextAlignment = .center,
         foregroundColor: Color = .black,
         maxWidth: CGFloat? = nil
@@ -49,7 +49,7 @@ public extension View {
         modifier(TextStyle(
             font: font,
             truncationMode: truncationMode,
-            lintLimit: lintLimit,
+            lineLimit: lineLimit,
             textAlignment: textAlignment,
             foregroundColor: foregroundColor,
             maxWidth: maxWidth
