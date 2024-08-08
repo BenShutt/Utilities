@@ -10,10 +10,10 @@ import SwiftUI
 
 public extension Color {
 
-    /// A color component in the range [0, 1]
+    /// A color value in the range [0, 1]
     typealias Component = Double
 
-    /// A color component in the range [0, 255]
+    /// A color value in the range [0, 255]
     typealias Component255 = Double
 
     /// Shorthand for initializing with RGBA components in [0, 255]

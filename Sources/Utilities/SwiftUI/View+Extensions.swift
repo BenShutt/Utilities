@@ -13,7 +13,7 @@ public extension View {
         size: CGFloat,
         alignment: Alignment = .center
     ) -> some View {
-        self.frame(
+        frame(
             width: size,
             height: size,
             alignment: alignment
@@ -49,5 +49,8 @@ public extension View {
 
 public struct SizePreferenceKey: PreferenceKey {
     public static var defaultValue: CGSize = .zero
-    public static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
+    public static func reduce(
+        value: inout CGSize,
+        nextValue: () -> CGSize
+    ) {}
 }
