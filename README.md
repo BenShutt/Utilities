@@ -4,15 +4,15 @@ A package of common functionality used in Swift development.
 
 ## Libraries
 
-There are 3 targets, each of which create a corresponding library product with its own `README.md`:
+There are 3 targets, each create a corresponding library product and has its own `README.md`:
 
 - ColorUtilities
 - Utilities
 - ViewRenderer
 
-## Installation (SPM)
+## Installation (SwiftPM)
 
-Add as a dependency to your `Package.swift` file or the package list in Xcode.
+Add a dependency to your `Package.swift` file or the package list in Xcode:
 
 ```swift
 dependencies: [
@@ -23,7 +23,7 @@ dependencies: [
 ]
 ```
 
-In your target, add the relevant product dependencies
+In your target, add the required product dependencies:
 
 ```swift
 dependencies: [
