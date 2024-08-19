@@ -28,4 +28,12 @@ public extension EdgeInsets {
             trailing: horizontal
         )
     }
+
+    var vertical: CGFloat {
+        top + bottom
+    }
+
+    var horizontal: CGFloat {
+        leading + trailing
+    }
 }
