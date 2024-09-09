@@ -9,7 +9,8 @@
 import SwiftUI
 
 /// Renders a PNG image from a SwiftUI view
-@MainActor public struct PNGRenderer: ViewRenderer {
+@MainActor
+public struct PNGRenderer: ViewRenderer {
     public var scale: CGFloat
     public var size: CGSize?
 
@@ -37,7 +38,9 @@ public enum PNGRendererError: Error {
 // MARK: - ImageRenderer + PNG
 
 public extension ImageRenderer {
-    @MainActor func pngData() -> Data? {
+
+    @MainActor
+    func pngData() -> Data? {
 #if os(iOS)
         uiImage?.pngData()
 #elseif os(macOS)

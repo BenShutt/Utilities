@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-@MainActor public protocol ViewRenderer {
+@MainActor
+public protocol ViewRenderer {
     var scale: CGFloat { get }
     var size: CGSize? { get }
 }

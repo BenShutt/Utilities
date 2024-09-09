@@ -9,7 +9,8 @@
 import SwiftUI
 
 /// Renders a PDF document from a SwiftUI view
-@MainActor public struct PDFRenderer: ViewRenderer {
+@MainActor
+public struct PDFRenderer: ViewRenderer {
     public var scale: CGFloat
     public var size: CGSize?
 
@@ -29,7 +30,9 @@ import SwiftUI
 // MARK: - ImageRenderer + PDF
 
 public extension ImageRenderer {
-    @MainActor func renderPDF(to url: URL) throws {
+
+    @MainActor
+    func renderPDF(to url: URL) throws {
         var isSuccess = false
 
         render { size, context in
