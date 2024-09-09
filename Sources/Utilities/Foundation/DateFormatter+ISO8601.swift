@@ -11,9 +11,9 @@ import Foundation
 public extension DateFormatter {
 
     /// ISO8601 date formatter with milliseconds
-    static var iso8601Milliseconds: DateFormatter {
-        iso8601(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ")
-    }
+    static let iso8601Milliseconds = iso8601(
+        dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+    )
 
     /// A date formatter configured to ISO601 properties, namely:
     /// - `calendar` → `.iso8601`
