@@ -1,5 +1,5 @@
 //
-//  TextStyle.swift
+//  StyledText.swift
 //  Utilities
 //
 //  Created by Ben Shutt on 16/07/2024.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-private struct TextStyle: ViewModifier {
+private struct StyledText: ViewModifier {
     var font: Font
     var truncationMode: Text.TruncationMode
     var lineLimit: Int?
@@ -38,7 +38,7 @@ private struct TextStyle: ViewModifier {
 // MARK: - View + TextStyle
 
 public extension View {
-    func textStyle(
+    func styledText(
         font: Font,
         truncationMode: Text.TruncationMode = .tail,
         lineLimit: Int? = nil,
@@ -46,7 +46,7 @@ public extension View {
         foregroundColor: Color = .black,
         maxWidth: CGFloat? = nil
     ) -> some View {
-        modifier(TextStyle(
+        modifier(StyledText(
             font: font,
             truncationMode: truncationMode,
             lineLimit: lineLimit,
