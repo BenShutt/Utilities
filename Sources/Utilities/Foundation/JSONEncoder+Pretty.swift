@@ -11,6 +11,7 @@ import Foundation
 public extension JSONEncoder {
     static let pretty = {
         let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .iso8601
         encoder.outputFormatting = [
             .prettyPrinted,
             .sortedKeys,
