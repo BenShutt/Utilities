@@ -39,15 +39,3 @@ public extension View {
         ))
     }
 }
-
-// MARK: - CGFloat + Values
-
-private typealias Pixels = CGFloat
-private typealias Points = CGFloat
-
-private extension CGFloat {
-    static let appIconSize: Pixels = 1024
-
-    static let a4Width: Points = 595
-    static let a4Height: Points = 842
-}
