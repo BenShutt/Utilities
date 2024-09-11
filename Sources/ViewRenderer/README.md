@@ -1,6 +1,7 @@
 # ViewRenderer
 
-Small library that uses [ImageRenderer](https://developer.apple.com/documentation/swiftui/imagerenderer) to render PDF and PNG files from SwiftUI views. A common usage is generating an (1024x1024) app icon PNG image.
+Uses [ImageRenderer](https://developer.apple.com/documentation/swiftui/imagerenderer) to render PDF and PNG files from SwiftUI views.
+A common usage is generating an (1024x1024) app icon PNG image.
 
 ## PNG
 
@@ -9,7 +10,7 @@ let data = try PNGRenderer().pngData(content: PNGView())
 try data.write(to: url, options: .atomic)
 ```
 
-### Common Example
+### Example
 
 ```swift
 struct AppIcon: View {
@@ -31,7 +32,12 @@ struct AppIcon: View {
 try PDFRenderer().render(content: PDFView(), to: url)
 ```
 
-### Common Example
+### Note
+
+Due to the `ImageRenderer` methods, the API for PDF is slightly different to PNG.
+Namely, writing directly to a `URL` rather than returning a `Data`.
+
+### Example
 
 ```swift
 struct PDFView: View {
