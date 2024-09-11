@@ -16,9 +16,9 @@ public extension DateFormatter {
     )
 
     /// A date formatter configured to ISO601 properties, namely:
-    /// - `calendar` → `.iso8601`
-    /// - `locale` → `"en_US_POSIX"`
-    /// - `timeZone` → `".current"`
+    /// - `calendar` → Identified by `.iso8601`
+    /// - `locale` → Identified by `"en_US_POSIX"`
+    /// - `timeZone` → `.current`
     ///
     /// - Warning:
     /// Only to be used when `ISO8601DateFormatter` will not suffice.
