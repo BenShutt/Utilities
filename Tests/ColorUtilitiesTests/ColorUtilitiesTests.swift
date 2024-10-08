@@ -5,46 +5,46 @@
 //  Created by Ben Shutt on 16/07/2024.
 //
 
-import XCTest
+import Testing
 import SwiftUI
 @testable import ColorUtilities
 
-final class ColorUtilitiesTests: XCTestCase {
-    func testHexString() {
+@Suite struct ColorUtilitiesTests {
+    @Test func hexString() {
         TestColor.allCases.forEach { testColor in
-            XCTAssertEqual(
-                testColor.expectedColor.hex(),
+            #expect(
+                testColor.expectedColor.hex() ==
                 testColor.expectedHex + "FF"
             )
         }
     }
 
-    func testHexStringWithoutOpacity() {
+    @Test func hexStringWithoutOpacity() {
         TestColor.allCases.forEach { testColor in
-            XCTAssertEqual(
-                testColor.expectedColor.hex(opacity: false),
+            #expect(
+                testColor.expectedColor.hex(opacity: false) ==
                 testColor.expectedHex
             )
         }
     }
 
-    func testHexInit() throws {
+    @Test func hexInit() throws {
         try TestColor.allCases.forEach { testColor in
             let color = Color(hex: testColor.expectedHex + "FF")
             guard let color else { throw TestError.optionalNil }
-            XCTAssertEqual(color, testColor.expectedColor)
+            #expect(color == testColor.expectedColor)
         }
     }
 
-    func testHexInitWithOpacity() throws {
+    @Test func hexInitWithOpacity() throws {
         try TestColor.allCases.forEach { testColor in
             let color = Color(hex: testColor.expectedHex + "80") // 50%
             guard let color else { throw TestError.optionalNil }
-            XCTAssertEqual(color.hex(), testColor.expectedColor.opacity(0.5).hex())
+            #expect(color.hex() == testColor.expectedColor.opacity(0.5).hex())
         }
     }
 
-    func test255() {
+    @Test func init255() {
         TestColor.allCases.forEach { testColor in
             let color255 = Color(
                 red255: testColor == .red ? 255 : 0,
@@ -53,7 +53,7 @@ final class ColorUtilitiesTests: XCTestCase {
                 opacity: 51 // 20%
             )
             let color = testColor.expectedColor.opacity(0.2)
-            XCTAssertEqual(color255.hex(), color.hex())
+            #expect(color255.hex() == color.hex())
         }
     }
 }
