@@ -14,7 +14,7 @@ final class ColorUtilitiesTests: XCTestCase {
         TestColor.allCases.forEach { testColor in
             XCTAssertEqual(
                 testColor.expectedColor.hex(),
-                testColor.expectedHex()
+                testColor.expectedHex + "FF"
             )
         }
     }
@@ -23,14 +23,14 @@ final class ColorUtilitiesTests: XCTestCase {
         TestColor.allCases.forEach { testColor in
             XCTAssertEqual(
                 testColor.expectedColor.hex(opacity: false),
-                testColor.expectedHex(opacity: "")
+                testColor.expectedHex
             )
         }
     }
 
     func testHexInit() throws {
         try TestColor.allCases.forEach { testColor in
-            let color = Color(hex: testColor.expectedHex())
+            let color = Color(hex: testColor.expectedHex + "FF")
             guard let color else { throw TestError.optionalNil }
             XCTAssertEqual(color, testColor.expectedColor)
         }
@@ -38,7 +38,7 @@ final class ColorUtilitiesTests: XCTestCase {
 
     func testHexInitWithOpacity() throws {
         try TestColor.allCases.forEach { testColor in
-            let color = Color(hex: testColor.expectedHex(opacity: "80")) // 50%
+            let color = Color(hex: testColor.expectedHex + "80") // 50%
             guard let color else { throw TestError.optionalNil }
             XCTAssertEqual(color.hex(), testColor.expectedColor.opacity(0.5).hex())
         }
@@ -73,11 +73,11 @@ private enum TestColor: CaseIterable {
         }
     }
 
-    func expectedHex(opacity: String = "FF") -> String {
+    var expectedHex: String {
         switch self {
-        case .red: "#FF0000\(opacity)"
-        case .green: "#00FF00\(opacity)"
-        case .blue: "#0000FF\(opacity)"
+        case .red: "#FF0000"
+        case .green: "#00FF00"
+        case .blue: "#0000FF"
         }
     }
 }
