@@ -3,7 +3,6 @@
 //  Utilities
 //
 //  Created by Ben Shutt on 19/07/2024.
-//  Copyright © 2024 Ben Shutt. All rights reserved.
 //
 
 import SwiftUI

@@ -3,7 +3,6 @@
 //  Utilities
 //
 //  Created by Ben Shutt on 03/08/2024.
-//  Copyright © 2024 Ben Shutt. All rights reserved.
 //
 
 import Foundation

@@ -8,10 +8,7 @@
 //  ___PACKAGENAME___
 //
 //  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright © ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //</string>
-    <key>ORGANIZATIONNAME</key>
-    <string>Ben Shutt</string>
     <key>PACKAGENAME</key>
     <string>Utilities</string>
 </dict>
