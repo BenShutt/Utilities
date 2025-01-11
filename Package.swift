@@ -15,6 +15,10 @@ let package = Package(
             targets: ["ColorUtilities"]
         ),
         .library(
+            name: "Keychain",
+            targets: ["Keychain"]
+        ),
+        .library(
             name: "Utilities",
             targets: ["Utilities"]
         ),
@@ -25,6 +29,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "ColorUtilities"),
+        .target(name: "Keychain"),
         .target(name: "Utilities"),
         .target(name: "ViewRenderer"),
         .testTarget(
