@@ -9,7 +9,8 @@ import Testing
 import Foundation
 @testable import Utilities
 
-@Suite struct DateFormatterExtensionsTests {
+@Suite("Unit tests for ISO8601 date formatting")
+struct DateFormatterExtensionsTests {
     private let timeZone = TimeZone(secondsFromGMT: 0)
 
     @Test func testISO8601Milliseconds() {

@@ -9,7 +9,8 @@ import Testing
 import SwiftUI
 @testable import ColorUtilities
 
-@Suite struct ColorUtilitiesTests {
+@Suite("Unit tests for ColorUtilities")
+struct ColorUtilitiesTests {
     @Test func hexString() {
         TestColor.allCases.forEach { testColor in
             #expect(
