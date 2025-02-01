@@ -2,9 +2,7 @@
 
 Fetch, add, update, and delete secure data from the [keychain](https://developer.apple.com/documentation/security/keychain-services?language=objc).
 
-[kSecClassGenericPassword](https://developer.apple.com/documentation/security/ksecclassgenericpassword)
-
-This package provides an implementation for common queries for `SecureData`:  
+This package provides an implementation for common queries for `SecureData` which is saved as a [kSecClassGenericPassword](https://developer.apple.com/documentation/security/ksecclassgenericpassword):  
 
 ```swift
 struct SecureData: Sendable, Equatable, Hashable, Codable {
@@ -24,9 +22,9 @@ try KeychainManager.update(secureData, addIfNotFound: true)
 
 ## Note
 
-Be conscious not to access the keychain before it is available. See [SO](https://stackoverflow.com/a/61313746).
+Be conscious not to access the keychain before it is available. See [SO answer](https://stackoverflow.com/a/61313746).
 
 ## References
 
 - [Storing CryptoKit Keys in the Keychain](https://developer.apple.com/documentation/cryptokit/storing_cryptokit_keys_in_the_keychain)
-- [SO](https://stackoverflow.com/a/68232091)
+- [SO example](https://stackoverflow.com/a/68232091)

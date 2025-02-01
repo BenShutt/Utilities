@@ -4,9 +4,10 @@ A package of common functionality used in Swift development.
 
 ## Libraries
 
-There are 3 targets, each create a corresponding library product and has its own `README.md`:
+There are 4 targets, each create a corresponding library product and has its own `README.md`:
 
 - ColorUtilities
+- Keychain
 - Utilities
 - ViewRenderer
 
@@ -28,6 +29,7 @@ In your target, add the required product dependencies:
 ```swift
 dependencies: [
     .product(name: "ColorUtilities", package: "Utilities"),
+    .product(name: "Keychain", package: "Utilities"),
     .product(name: "Utilities", package: "Utilities"),
     .product(name: "ViewRenderer", package: "Utilities")
 ]
