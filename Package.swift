@@ -3,6 +3,11 @@
 
 import PackageDescription
 
+let colorUtilities = "ColorUtilities"
+let keychain = "Keychain"
+let utilities = "Utilities"
+let viewRenderer = "ViewRenderer"
+
 let package = Package(
     name: "Utilities",
     platforms: [
@@ -11,29 +16,50 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "ColorUtilities",
-            targets: ["ColorUtilities"]
+            name: colorUtilities,
+            targets: [colorUtilities]
         ),
         .library(
-            name: "Utilities",
-            targets: ["Utilities"]
+            name: keychain,
+            targets: [keychain]
         ),
         .library(
-            name: "ViewRenderer",
-            targets: ["ViewRenderer"]
+            name: utilities,
+            targets: [utilities]
+        ),
+        .library(
+            name: viewRenderer,
+            targets: [viewRenderer]
         )
     ],
     targets: [
-        .target(name: "ColorUtilities"),
-        .target(name: "Utilities"),
-        .target(name: "ViewRenderer"),
-        .testTarget(
-            name: "ColorUtilitiesTests",
-            dependencies: ["ColorUtilities"]
+        .target(
+            name: colorUtilities,
+            exclude: ["README.md"]
+        ),
+        .target(
+            name: keychain,
+            exclude: ["README.md"]
+        ),
+        .target(
+            name: utilities,
+            exclude: ["README.md"]
+        ),
+        .target(
+            name: viewRenderer,
+            exclude: ["README.md"]
         ),
         .testTarget(
-            name: "UtilitiesTests",
-            dependencies: ["Utilities"]
+            name: "\(colorUtilities)Tests",
+            dependencies: [.byName(name: colorUtilities)]
+        ),
+        .testTarget(
+            name: "\(keychain)Tests",
+            dependencies: [.byName(name: keychain)]
+        ),
+        .testTarget(
+            name: "\(utilities)Tests",
+            dependencies: [.byName(name: utilities)]
         )
     ]
 )

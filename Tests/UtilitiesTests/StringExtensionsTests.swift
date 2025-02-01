@@ -8,7 +8,8 @@
 import Testing
 @testable import Utilities
 
-@Suite struct StringExtensionsTests {
+@Suite("Unit tests for String extensions")
+struct StringExtensionsTests {
     @Test func untrimmed() {
         #expect("untrimmed".trimmed == "untrimmed")
     }

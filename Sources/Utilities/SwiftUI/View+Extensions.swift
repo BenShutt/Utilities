@@ -20,7 +20,7 @@ public extension View {
     }
 
     func onSizeChange(
-        _ action: @escaping (CGSize) -> Void
+        _ action: @escaping @Sendable (CGSize) -> Void
     ) -> some View {
         background(
             GeometryReader { proxy in
