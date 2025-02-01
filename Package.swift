@@ -33,10 +33,22 @@ let package = Package(
         )
     ],
     targets: [
-        .target(name: colorUtilities, exclude: ["README.md"]),
-        .target(name: keychain, exclude: ["README.md"]),
-        .target(name: utilities, exclude: ["README.md"]),
-        .target(name: viewRenderer, exclude: ["README.md"]),
+        .target(
+            name: colorUtilities,
+            exclude: ["README.md"]
+        ),
+        .target(
+            name: keychain,
+            exclude: ["README.md"]
+        ),
+        .target(
+            name: utilities,
+            exclude: ["README.md"]
+        ),
+        .target(
+            name: viewRenderer,
+            exclude: ["README.md"]
+        ),
         .testTarget(
             name: "\(colorUtilities)Tests",
             dependencies: [.byName(name: colorUtilities)]
